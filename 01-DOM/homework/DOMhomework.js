@@ -64,7 +64,22 @@ ToDo.prototype.completeToDo = function () {
 function buildToDo(todo, index) {
   // Tu código acá:
   // Paso 1 y 2
-  var toDoShell = document.createElement
+  var toDoShell = document.createElement('div');
+  toDoShell.setAttribute('class', 'toDoShell');
+  // Paso 3
+  let toDoText = document.createElement('span');
+  // Paso 4
+  toDoText.innerHTML = todo.description;
+  // Paso 5
+  toDoText.setAttribute('id', index);
+  // Paso 6
+  if(todo.complete === true){
+    toDoText.setAttribute('class', 'completeText');
+  }
+  // Paso 7
+  toDoShell.appendChild(toDoText);
+  // Paso 8
+  return toDoShell;
 }
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
@@ -74,7 +89,8 @@ function buildToDo(todo, index) {
 
 function buildToDos(toDos) {
   // Tu código acá:
-
+  var arr = toDos.map(function(todo, index) {return buildToDo(todo, index)});
+  return arr;
 }
 
 
