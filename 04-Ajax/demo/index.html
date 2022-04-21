@@ -13,16 +13,17 @@
   <button class='boton'>AJAX!</button>
   <script type="text/javascript">
     var index = 1;
-    $('.boton').click(function () {
+    $('.boton').click(function () { //document.querySelector('.boton').addEventListener(click, cb)
       // GET AJAX
       $.get("https://jsonplaceholder.typicode.com/photos/" + index, function (data) {
         // vanilla javascript
-        var img = document.createElement('img');
-        img.src = dataAca.url;
-        var title = document.createElement('h3');
-        title.textContent = dataAca.title;
-        $('#respuesta').append(img);
-        $('#respuesta').append(title);
+
+        var img = document.createElement('img'); // crea un elemento img y lo guarda en la variable img <img/>
+        img.src = dataAca.url; // <img src = dataAca.url /> el src de la etiqueta img sea igual a data.url -> url de la imagen
+        var title = document.createElement('h3'); // Crea elemento de tipo h3 <h3> </h3>
+        title.textContent = dataAca.title; // el contenido del h3 sea lo que tiene data en su propiedad title en el servidor
+        $('#respuesta').append(img); //Agarra el elemento del DOM cuyo Id sea 'respuesta' -> append (agrega) la imagen
+        $('#respuesta').append(title); // Lo mismo y le append el title
         index++;
       });
 
