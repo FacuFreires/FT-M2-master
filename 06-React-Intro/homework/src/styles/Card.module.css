@@ -1,0 +1,39 @@
+.boton {
+    background-color: rgb(14, 49, 46);
+    border-radius: 3px;
+    border: none;
+    width: absolute;
+    align-self: flex-end;
+    margin: 10px;
+}
+
+.botonColor {
+    color: white;
+}
+
+.boton:hover {
+    color: white;
+    background-color: grey;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+    border: 2px solid grey;
+    border-radius: 10px;
+    height: 250px;
+    background-color: lightblue;
+}
+
+.imagen{
+    color: black;
+}

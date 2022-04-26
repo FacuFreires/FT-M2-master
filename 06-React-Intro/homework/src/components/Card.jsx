@@ -1,19 +1,20 @@
 import React from 'react';
+import estilo from '../styles/Card.module.css';
 
 export default function Card(props) {
   // prop = min, max, name, img, onClose
   // acá va tu código
   return (
-      <div>
-        <button onClick={props.onClose}>X</button>
+      <div className={estilo.contenedor}>
+        <button onClick={props.onClose} className={`${estilo.boton} ${estilo.botonColor}`}>X</button>
         <h4>{props.name}</h4>
-        <div>
+        <div className={estilo.info}>
           <p>Min:</p>
           <p>{props.min}</p>
           <p>Max:</p>
           <p>{props.max}</p>
         </div>
-        <img src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt="img" />
+        <img src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt="img" className={estilo.imagen}/>
       </div>
   )
 

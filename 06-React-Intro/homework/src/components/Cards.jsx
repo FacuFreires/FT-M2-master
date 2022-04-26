@@ -1,18 +1,19 @@
 import React from 'react';
 import Card from './Card';
+import estiloCards from '../styles/Cards.module.css';
 
-export default function Cards(props) {
+export default function Cards({cities}) {
   // props = {cities}
   // cities = {[], [], []}
   // acá va tu código
   // tip, podés usar un map
-  if(!props.cities) { // ! = si no me pasaste props.cities
+  if(!cities) { // ! = si no me pasaste props.cities
     return <h1>No hay ciudades disponibles</h1>
   } 
   return (
-      <div>
+      <div className={estiloCards.cards}>
         {
-          props.cities && props.cities.map(city => (
+          cities && cities.map(city => (
             <Card 
             key={city.id}
             max={city.main.temp_max}
