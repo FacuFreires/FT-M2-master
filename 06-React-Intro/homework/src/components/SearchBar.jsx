@@ -1,6 +1,17 @@
 import React from 'react';
 
+
+
 export default function SearchBar(props) {
   // acá va tu código
-  return <div>Search Bar Component</div>
-};
+  return (
+    <div> 
+        
+          <input type="text" placeholder = "Ciudad..." />
+          <button onClick={()=>props.onSearch('Buscando Ciudad')}>Agregar</button>
+          {/* $.('.button').addEventListener('click'), function(e) {} --> Lo mismo a poner onClick en button -> Quiero definir una funcion*/}
+        
+      </div>
+      
+      )
+    };
